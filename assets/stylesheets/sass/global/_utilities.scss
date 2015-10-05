@@ -1,0 +1,114 @@
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flex-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.flex-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@each $breakpoint, $item in $breakpoints {
+
+  @media #{$item} {
+
+    .show-for-#{$breakpoint} {
+      display: block !important;
+    }
+
+    .hide-for-#{$breakpoint} {
+      display: none !important;
+    }
+
+    .left-for-#{$breakpoint} {
+      float: left !important;
+    }
+
+    .right-for-#{$breakpoint} {
+      float: right !important;
+    }
+
+    .text-left-for-#{$breakpoint} {
+      text-align: left !important;
+    }
+
+    .text-center-for-#{$breakpoint} {
+      text-align: center !important;
+    }
+
+    .text-right-for-#{$breakpoint} {
+      text-align: right !important;
+    }
+
+  }
+
+}

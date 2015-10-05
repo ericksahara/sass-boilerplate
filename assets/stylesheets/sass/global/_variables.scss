@@ -1,0 +1,40 @@
+//
+// Colors brand
+//
+
+$brand-primary: #34495E !default;
+$brand-secondary: #2980B9 !default;
+$brand-tertiary: #000 !default;
+$brand-success: #44D08C !default;
+$brand-danger: #F44336 !default;
+$text-color: #000 !default;
+
+//
+// Grid
+//
+
+$row-width: 1024px !default;
+$number-of-columns: 12 !default;
+
+//
+// Breakpoints
+//
+
+$breakpoints:(
+    small:    "screen and (max-width: 767px)",
+    small-p:  "screen and (max-width:767px) and (orientation: portrait)",
+    small-l:  "screen and (max-width:767px) and (orientation: landscape)",
+    medium:   "screen and (min-width:768px) and (max-width:1024px)",
+    medium-p: "screen and (min-width:768px) and (max-width:1024px) and (orientation: portrait)",
+    medium-l: "screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape)",
+    large:    "screen and (min-width:1025px)"
+);
+
+//
+//  Typography
+//
+
+$font-family-sans-serif: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "Georgia", serif !default;
+
+

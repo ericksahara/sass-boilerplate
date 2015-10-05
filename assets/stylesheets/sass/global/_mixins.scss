@@ -1,0 +1,62 @@
+//Mixins
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin add-icon($icon){
+    @include icons-sprite($icon);
+    width: icons-sprite-width($icon);
+    height: icons-sprite-height($icon);
+    display: inline-block;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+@mixin mq($name) {
+
+  // If the $nam exists in the variable $breakpoints
+  @if map-has-key($breakpoints, $name) {
+
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $name)} {
+      @content;
+    }
+
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+
+}
+
+@mixin mt-box-shadow($level: 1){
+  @if $level == 1 {
+    @include box-shadow(1px 1px 1px 0 rgba(0, 0, 0, 0.07), 1px 2px 5px 0 rgba(0, 0, 0, 0.06));
+  } @else if $level == 2 {
+    @include box-shadow(0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23));
+  } @else if $level == 3 {
+    @include box-shadow(0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23));
+  } @else if $level == 4 {
+    @include box-shadow(0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22));
+  } @else if $level == 5 {
+    @include box-shadow(0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22));
+  }
+}
